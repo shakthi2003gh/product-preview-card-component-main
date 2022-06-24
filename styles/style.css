@@ -12,6 +12,12 @@ html {
   min-width: 375px;
 }
 
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
 /* >Color palette */
 :root {
   --color-text: hsl(228, 12%, 48%);
@@ -25,7 +31,7 @@ html {
 /* >Typography */
 body {
   font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-text);
   background-color: var(--bg);
 }
@@ -35,10 +41,94 @@ h1,
   font-family: "Fraunces", serif;
 }
 
+h1,
+p {
+  margin: 0;
+}
+
 h1 {
+  font-size: 3rem;
+  line-height: 1.45ch;
   color: var(--color-heading);
 }
 
 p {
-  line-height: 2.5ch;
+  line-height: 2.4ch;
+}
+
+/* >card */
+.card {
+  max-width: 577px;
+  margin: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--bg-card);
+}
+
+.content {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem;
+}
+
+.content > span {
+  letter-spacing: 0.7ch;
+  text-transform: uppercase;
+}
+
+picture > img {
+  width: 100%;
+  height: 100%;
+}
+
+.price {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  font-size: 2.8rem;
+  color: var(--color-highlight);
+}
+
+del {
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+button {
+  font-weight: bold;
+  width: 100%;
+  padding: 1.5rem;
+  padding-left: 3rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  color: var(--bg-card);
+  background-color: var(--color-highlight);
+}
+
+button span {
+  position: relative;
+  padding-left: 1rem;
+}
+
+button span::before {
+  position: absolute;
+  content: url(/images/icon-cart.svg);
+  left: -1.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: hsl(154deg 96% 12%);
+}
+
+@media (min-width: 550px) {
+  .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content {
+    margin: 3rem;
+  }
 }
